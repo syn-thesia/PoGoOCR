@@ -55,7 +55,7 @@ pip install opencv-python-headless numpy easyocr
 
 ```python
 # Replace with the path to your folder containing images
-folder_path = r'C:\Users\xxxx\Documents\pogo'
+folder_path = r'path_to_screenshot_folder'
 process_images_in_folder(folder_path)
 ```
 
