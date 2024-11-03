@@ -23,7 +23,8 @@ def calculate_cp(calc_attack, calc_defense, calc_stamina, multiplier):
 
 # Function to calculate Stat Product (SP)
 def calculate_stat_product(actual_attack, actual_defense, actual_stamina):
-    return (actual_attack * actual_defense * actual_stamina) // 1000
+    sp = (actual_attack * actual_defense * actual_stamina) / 1000
+    return math.ceil(sp * 10) / 10
 
 # Process each Pokémon
 for pokemon in pokemon_stats:
@@ -46,7 +47,7 @@ for pokemon in pokemon_stats:
                 # Calculate actual stats for SP
                 actual_attack = calc_attack * multiplier
                 actual_defense = calc_defense * multiplier
-                actual_stamina = calc_stamina * multiplier
+                actual_stamina = int(calc_stamina * multiplier)
 
                 # Calculate Stat Product (SP)
                 sp = calculate_stat_product(actual_attack, actual_defense, actual_stamina)
