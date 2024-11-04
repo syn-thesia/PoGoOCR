@@ -73,8 +73,8 @@ for pokemon in pokemon_stats:
                 })
                 break
 
-    # Sort results by Stat Product (SP) in descending order
-    results_sorted = sorted(results, key=lambda x: x['sp'], reverse=True)
+    # Sort the results by Stat Product in descending order, then by CP in descending order if SP is the same
+    results_sorted = sorted(results, key=lambda x: (x['sp'], x['cp']), reverse=True)
 
     # Calculate rank and percentage based on SP
     max_sp = results_sorted[0]['sp'] if results_sorted else 1

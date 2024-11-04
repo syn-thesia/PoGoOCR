@@ -78,8 +78,8 @@ for pokemon in pokemon_stats:
                 })
                 break  # Move to the next IV combination after finding the valid CP
 
-    # Sort the results by Stat Product in descending order
-    results_sorted = sorted(results, key=lambda x: x['sp'], reverse=True)
+    # Sort the results by Stat Product in descending order, then by CP in descending order if SP is the same
+    results_sorted = sorted(results, key=lambda x: (x['sp'], x['cp']), reverse=True)
 
     # Set rank and calculate percentage
     max_sp = results_sorted[0]['sp']  # The highest Stat Product for this Pokémon
